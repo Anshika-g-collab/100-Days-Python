@@ -10,6 +10,8 @@ if height >=120:
     elif age <=18:
         bill = 700
         print("Youth tickets are Rs. 700.")
+    elif age >=45 and age<=55:
+        print("everything is going to be ok. Have a free ride on us!")
     else:
         bill = 1000
         print("Adult tickets are Rs. 1000.")
