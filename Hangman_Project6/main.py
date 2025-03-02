@@ -1,70 +1,8 @@
 import random 
-# Raw strings (r"") tell Python to ignore escape sequences.
-stages = [r'''
-    +---+
-    |   |
-        |
-        |
-        |
-        |
-===========
-''',
-r'''
-    +---+
-    |   |
-    O   |
-        |
-        |
-        |
-===========
-''',
-r'''
-    +---+
-    |   |
-    O   |
-    |   |
-        |
-        |
-===========
-''',
-r'''
-    +---+
-    |   |
-    O   |
-   /|   |
-        |
-        |
-===========
-''',
-r'''
-    +---+
-    |   |
-    O   |
-   /|\  |
-        |
-        |
-===========
-''',
-r'''
-    +---+
-    |   |
-    O   |
-   /|\  |
-   /    |
-        |
-===========
-''',
-r'''
-    +---+
-    |   |
-    O   |
-   /|\  |
-   / \  |
-        |
-===========
-''']
-word_list = ["camel","killer","awkward","galaxy","rhythm",'force',"tug","borrow","antibacterial","cake"]
-chosen_word = random.choice(word_list)
+import hangman_visuals
+import hangman_words
+
+chosen_word = random.choice(hangman_words.word_list)
 word_length = len(chosen_word)
 end_of_game = False
 
@@ -75,7 +13,7 @@ display = []
 for letter in chosen_word:
      display+="_"
 print(f"{' '.join(display)}")
-print(stages[lives])
+print(hangman_visuals.stages[lives])
 while not end_of_game :
     
     guess = input("\nGuess a letter: ").lower()
@@ -96,7 +34,7 @@ while not end_of_game :
         end_of_game = True
         print("🎉 Congratulations! You guessed the word! 🎉")
 
-    print(stages[lives])
+    print(hangman_visuals.stages[lives])
 
          
     
