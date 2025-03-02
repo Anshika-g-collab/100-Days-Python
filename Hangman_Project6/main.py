@@ -9,9 +9,11 @@ end_of_game = False
 lives = 0
 
 print("🎮 Welcome to Hangman! 🎮")
+print(hangman_visuals.logo)
 display = []
 for letter in chosen_word:
      display+="_"
+print(f"The word has following blank spaces : \n")
 print(f"{' '.join(display)}")
 print(hangman_visuals.stages[lives])
 while not end_of_game :
